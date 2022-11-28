@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * Emulate a deck of cards
  *
- * @author Mr. Jaffe
+ * @author Trevor McDonald
  * @version 2022-10-19
  */
 public class Deck
@@ -69,8 +69,10 @@ public class Deck
      * @returns The top card of the deck (at cards index 0)
      */
     public Card dealCardFromDeck() {
-        // To be written 
-        return null;
+        
+        Card dealt = cards.get(0); 
+        cards.remove(dealt);
+        return dealt;
     }
     
     /**
