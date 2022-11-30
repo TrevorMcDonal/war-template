@@ -2,7 +2,7 @@
 /**
  * War game class
  *
- * @author Mr. Jaffe
+ * @author Trevor MCDonal
  * @version 2022-10-19
  */
 public class War

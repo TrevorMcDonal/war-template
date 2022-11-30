@@ -45,6 +45,7 @@ public class Deck
      */
     public void shuffle() {
         // To be written
+         
     }
     
     /**
@@ -81,6 +82,7 @@ public class Deck
      */
     public void addCardToDeck(Card cardToAdd) {
         // To be written
+        this.cards.add(0, cardToAdd);
     }
     
 }

@@ -2,7 +2,7 @@
 /**
  * Implement a playing card
  *
- * @author Mr. Jaffe
+ * @author Trevor MCDonal   
  * @version 2022-10-18
  */
 public class Card
