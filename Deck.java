@@ -1,16 +1,17 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.lang.Math;
 
 /**
  * Emulate a deck of cards
  *
- * @author Trevor McDonald
+ * @author Mr. Jaffe
  * @version 2022-10-19
  */
 public class Deck
 {
     private List<Card> cards;
-
+    private List<Card> shuffledDeck;
     /**
      * Deck constructor: Create an empty deck of cards
      */
@@ -44,8 +45,16 @@ public class Deck
      * Shuffles the cards in the deck
      */
     public void shuffle() {
-        // To be written
-         
+        shuffledDeck = new ArrayList();
+        int s = cards.size();
+        int i = 0;
+        while(i < s){
+            int r = (int)(Math.random() * s)+1;
+            shuffledDeck.add(cards.get(r-1));
+            cards.remove(r-1);
+            s--;
+        }
+        cards = shuffledDeck;
     }
     
     /**
@@ -70,10 +79,12 @@ public class Deck
      * @returns The top card of the deck (at cards index 0)
      */
     public Card dealCardFromDeck() {
-        
-        Card dealt = cards.get(0); 
-        cards.remove(dealt);
-        return dealt;
+        if(this.getDeckSize() > 0) {
+            Card c = new Card(this.cards.get(0).getRank(), this.cards.get(0).getFace(), this.cards.get(0).getSuit());
+            cards.remove(0);
+            return c;
+        }
+        return null;
     }
     
     /**
@@ -81,8 +92,10 @@ public class Deck
      * @param cardToAdd: Card to add to this deck
      */
     public void addCardToDeck(Card cardToAdd) {
-        // To be written
-        this.cards.add(0, cardToAdd);
+        cards.add(cardToAdd);
     }
     
+    public Card revealCardAtIndex(int i) {
+        return this.cards.get(i);
+    }
 }
